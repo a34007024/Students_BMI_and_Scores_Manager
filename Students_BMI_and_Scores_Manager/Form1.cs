@@ -84,7 +84,57 @@ namespace Students_BMI_and_Scores_Manager
             idLabel.Text = Convert.ToString(selRowData[0].Value);
         }
 
+        //下面的函式是用來畫統計圖表的
+        public void setBar(Dictionary<string, int> i_weight_bar)
+        {
+            this.chart1.Series["weight"].Points.Clear();
+            foreach (var OneItem in i_weight_bar)
+            {
+                this.chart1.Series["weight"].Points.AddXY(OneItem.Key, OneItem.Value);
+            }
+        }
+        //下面的函式，把表格上的體重分群，分成~40,40~50,50~60,60~70,70~80,80~
+        public void updateChart()
+        {
+            Dictionary<string, int> _weight_bar = new Dictionary<string, int>();
 
+            _weight_bar.Add("~40", 0);
+            _weight_bar.Add("40~50", 0);
+            _weight_bar.Add("50~60", 0);
+            _weight_bar.Add("60~70", 0);
+            _weight_bar.Add("70~80", 0);
+            _weight_bar.Add("80~", 0);
+
+            for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+            {
+                if (Convert.ToDouble(dataGridView1.Rows[i].Cells[3].Value) < 40)
+                {
+                    _weight_bar["~40"] = _weight_bar["~40"] + 1;
+                }
+                else if (Convert.ToDouble(dataGridView1.Rows[i].Cells[3].Value) >= 40 && Convert.ToDouble(dataGridView1.Rows[i].Cells[3].Value) < 50)
+                {
+                    _weight_bar["40~50"] = _weight_bar["40~50"] + 1;
+                }
+                else if (Convert.ToDouble(dataGridView1.Rows[i].Cells[3].Value) >= 50 && Convert.ToDouble(dataGridView1.Rows[i].Cells[3].Value) < 60)
+                {
+                    _weight_bar["50~60"] = _weight_bar["50~60"] + 1;
+                }
+                else if (Convert.ToDouble(dataGridView1.Rows[i].Cells[3].Value) >= 60 && Convert.ToDouble(dataGridView1.Rows[i].Cells[3].Value) < 70)
+                {
+                    _weight_bar["60~70"] = _weight_bar["60~70"] + 1;
+                }
+                else if (Convert.ToDouble(dataGridView1.Rows[i].Cells[3].Value) >= 70 && Convert.ToDouble(dataGridView1.Rows[i].Cells[3].Value) < 80)
+                {
+                    _weight_bar["70~80"] = _weight_bar["70~80"] + 1;
+                }
+                else
+                {
+                    _weight_bar["80~"] = _weight_bar["80~"] + 1;
+                }
+            }
+            setBar(_weight_bar);
+
+        }
 
         private void editDataBtn_Click(object sender, EventArgs e)
         {

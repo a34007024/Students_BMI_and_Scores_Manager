@@ -42,6 +42,7 @@ namespace Students_BMI_and_Scores_Manager
                         dataGridView1.Rows.Add(new object[] { index, name, height, weight, bmi });
                         index += 1;
                         idLabel.Text = index.ToString();
+                        updateChart();//新增資料後，更新圖表
                     }
                     else
                     {
@@ -54,6 +55,7 @@ namespace Students_BMI_and_Scores_Manager
                     dataGridView1.Rows.Add(new object[] { index, name, height, weight, bmi });
                     index += 1;
                     idLabel.Text = index.ToString();
+                    updateChart();//新增資料後，更新圖表
                 }
             }
             catch

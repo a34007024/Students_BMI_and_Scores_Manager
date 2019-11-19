@@ -1,6 +1,9 @@
 */bin
 */obj
 */.vs
+*/v16
 *.ide
 *.lock
 *.suo
+.vs/Students_BMI_and_Scores_Manager/v16/Server/sqlite3/storage.ide-shm
+.vs/Students_BMI_and_Scores_Manager/v16/Server/sqlite3/storage.ide-wal

@@ -43,6 +43,7 @@
             this.idLabel = new System.Windows.Forms.Label();
             this.weightTextbox = new System.Windows.Forms.TextBox();
             this.addDataBtn = new System.Windows.Forms.Button();
+            this.editDataBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,6 +95,7 @@
             this.dataGridView1.RowTemplate.Height = 31;
             this.dataGridView1.Size = new System.Drawing.Size(867, 520);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.double_click);
             // 
             // Column1
             // 
@@ -141,6 +143,7 @@
             // heightTextbox
             // 
             this.heightTextbox.Font = new System.Drawing.Font("微軟正黑體", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.heightTextbox.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.heightTextbox.Location = new System.Drawing.Point(203, 176);
             this.heightTextbox.Name = "heightTextbox";
             this.heightTextbox.Size = new System.Drawing.Size(150, 50);
@@ -170,6 +173,7 @@
             // weightTextbox
             // 
             this.weightTextbox.Font = new System.Drawing.Font("微軟正黑體", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.weightTextbox.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.weightTextbox.Location = new System.Drawing.Point(203, 245);
             this.weightTextbox.Name = "weightTextbox";
             this.weightTextbox.Size = new System.Drawing.Size(150, 50);
@@ -187,11 +191,23 @@
             this.addDataBtn.UseVisualStyleBackColor = true;
             this.addDataBtn.Click += new System.EventHandler(this.addDataBtn_Click);
             // 
+            // editDataBtn
+            // 
+            this.editDataBtn.Font = new System.Drawing.Font("微軟正黑體", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.editDataBtn.Location = new System.Drawing.Point(65, 438);
+            this.editDataBtn.Name = "editDataBtn";
+            this.editDataBtn.Size = new System.Drawing.Size(248, 63);
+            this.editDataBtn.TabIndex = 10;
+            this.editDataBtn.Text = "修改資料";
+            this.editDataBtn.UseVisualStyleBackColor = true;
+            this.editDataBtn.Click += new System.EventHandler(this.editDataBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1258, 664);
+            this.Controls.Add(this.editDataBtn);
             this.Controls.Add(this.addDataBtn);
             this.Controls.Add(this.weightTextbox);
             this.Controls.Add(this.idLabel);
@@ -227,6 +243,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.Button editDataBtn;
     }
 }
 

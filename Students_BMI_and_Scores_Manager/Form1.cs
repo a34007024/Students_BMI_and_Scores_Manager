@@ -153,6 +153,9 @@ namespace Students_BMI_and_Scores_Manager
             heightTextbox.Text = Convert.ToString(selRowData[2].Value);
             weightTextbox.Text = Convert.ToString(selRowData[3].Value);
             idLabel.Text = Convert.ToString(selRowData[0].Value);
+            chineseScoreTextbox.Text = Convert.ToString(selRowData[5].Value);
+            englishScoreTextbox.Text = Convert.ToString(selRowData[6].Value);
+            mathScoreTextbox.Text = Convert.ToString(selRowData[7].Value);
         }
 
         //下面的函式是用來畫統計圖表的

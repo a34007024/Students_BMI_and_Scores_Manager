@@ -81,7 +81,7 @@ namespace Students_BMI_and_Scores_Manager
 
                     public_serial = serial;
                     DataGridViewRowCollection rows = dataGridView1.Rows;
-                    rows.Add(new Object[] { serial, name, id, height, weight, bmi, chineseScore, englishScore, mathScore });
+                    rows.Add(new Object[] { id, name, height, weight, bmi, chineseScore, englishScore, mathScore });
                 }
                 DBConfig.sqlite_dataReader.Close();
             }

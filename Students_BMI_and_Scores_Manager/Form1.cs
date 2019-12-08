@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SQLite;//導入存取SQLite的函式庫
 
 namespace Students_BMI_and_Scores_Manager
 {
     public partial class Form1 : Form
     {
+        int public_serial = 0;
         int index = 1;
         double height;
         double weight;
@@ -21,8 +23,67 @@ namespace Students_BMI_and_Scores_Manager
         {
             InitializeComponent();
             idLabel.Text = index.ToString();
+            change_dataGridView1_font();
+            load_DB();//程式初始化, 載入dataBase
         }
-        
+
+        private void change_dataGridView1_font()
+        {
+            this.dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("微軟正黑體", 10);
+            this.dataGridView1.DefaultCellStyle.Font = new Font("微軟正黑體", 12);
+
+            //for test
+            //DataGridViewRowCollection rows = dataGridView1.Rows;
+            //rows.Add(new Object[] { 1, "Tom", 101, 175.0, 66.0 });
+            //rows.Add(new Object[] { 2, "John", 102, 165.0, 56.0 });
+            //rows.Add(new Object[] { 3, "Mary", 103, 155.0, 46.0 });
+        }
+
+        public class DBConfig//用來設定SQLite的屬性 (如檔案路徑)
+        {
+            public static string dbFile = Application.StartupPath + @"\owo.db";
+            public static string dbPath = "Data source=" + dbFile;
+
+            public static SQLiteConnection sqlite_connect;
+            public static SQLiteCommand sqlite_cmd;
+            public static SQLiteDataReader sqlite_dataReader;
+        }
+
+        private void load_DB()//載入DataBase
+        {
+            DBConfig.sqlite_connect = new SQLiteConnection(DBConfig.dbPath);
+            DBConfig.sqlite_connect.Open();//Open database
+
+            show_DB();
+        }
+
+        private void show_DB()
+        {
+            this.dataGridView1.Rows.Clear();
+
+            string sql = @"SELECT * from record;";
+            DBConfig.sqlite_cmd = new SQLiteCommand(sql, DBConfig.sqlite_connect);
+            DBConfig.sqlite_dataReader = DBConfig.sqlite_cmd.ExecuteReader();
+
+            while (DBConfig.sqlite_dataReader.Read()) //read every data
+            {
+                int serial = Convert.ToInt32(DBConfig.sqlite_dataReader["serial"]);
+                string name = Convert.ToString(DBConfig.sqlite_dataReader["name"]);
+                int id = Convert.ToInt32(DBConfig.sqlite_dataReader["id"]);
+                double height = Convert.ToDouble(DBConfig.sqlite_dataReader["height"]);
+                double weight = Convert.ToDouble(DBConfig.sqlite_dataReader["weight"]);
+                double bmi = Convert.ToDouble(DBConfig.sqlite_dataReader["BMI"]);
+                int chineseScore = Convert.ToInt32(DBConfig.sqlite_dataReader["chineseScore"]);
+                int englishScore = Convert.ToInt32(DBConfig.sqlite_dataReader["englishScore"]);
+                int mathScore = Convert.ToInt32(DBConfig.sqlite_dataReader["mathScore"]);
+
+                public_serial = serial;
+                DataGridViewRowCollection rows = dataGridView1.Rows;
+                rows.Add(new Object[] { serial, name, id, height, weight, bmi, chineseScore, englishScore, mathScore });
+            }
+            DBConfig.sqlite_dataReader.Close();
+        }
+
         private void addDataBtn_Click(object sender, EventArgs e)
         {
             try

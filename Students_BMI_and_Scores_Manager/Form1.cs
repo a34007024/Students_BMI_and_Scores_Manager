@@ -59,29 +59,37 @@ namespace Students_BMI_and_Scores_Manager
 
         private void show_DB()
         {
-            this.dataGridView1.Rows.Clear();
-
-            string sql = @"SELECT * from record;";
-            DBConfig.sqlite_cmd = new SQLiteCommand(sql, DBConfig.sqlite_connect);
-            DBConfig.sqlite_dataReader = DBConfig.sqlite_cmd.ExecuteReader();
-
-            while (DBConfig.sqlite_dataReader.Read()) //read every data
+            try
             {
-                int serial = Convert.ToInt32(DBConfig.sqlite_dataReader["serial"]);
-                string name = Convert.ToString(DBConfig.sqlite_dataReader["name"]);
-                int id = Convert.ToInt32(DBConfig.sqlite_dataReader["id"]);
-                double height = Convert.ToDouble(DBConfig.sqlite_dataReader["height"]);
-                double weight = Convert.ToDouble(DBConfig.sqlite_dataReader["weight"]);
-                double bmi = Convert.ToDouble(DBConfig.sqlite_dataReader["BMI"]);
-                int chineseScore = Convert.ToInt32(DBConfig.sqlite_dataReader["chineseScore"]);
-                int englishScore = Convert.ToInt32(DBConfig.sqlite_dataReader["englishScore"]);
-                int mathScore = Convert.ToInt32(DBConfig.sqlite_dataReader["mathScore"]);
+                this.dataGridView1.Rows.Clear();
 
-                public_serial = serial;
-                DataGridViewRowCollection rows = dataGridView1.Rows;
-                rows.Add(new Object[] { serial, name, id, height, weight, bmi, chineseScore, englishScore, mathScore });
+                string sql = @"SELECT * from record;";
+                DBConfig.sqlite_cmd = new SQLiteCommand(sql, DBConfig.sqlite_connect);
+                DBConfig.sqlite_dataReader = DBConfig.sqlite_cmd.ExecuteReader();
+
+                while (DBConfig.sqlite_dataReader.Read()) //read every data
+                {
+                    int serial = Convert.ToInt32(DBConfig.sqlite_dataReader["serial"]);
+                    string name = Convert.ToString(DBConfig.sqlite_dataReader["name"]);
+                    int id = Convert.ToInt32(DBConfig.sqlite_dataReader["id"]);
+                    double height = Convert.ToDouble(DBConfig.sqlite_dataReader["height"]);
+                    double weight = Convert.ToDouble(DBConfig.sqlite_dataReader["weight"]);
+                    double bmi = Convert.ToDouble(DBConfig.sqlite_dataReader["BMI"]);
+                    int chineseScore = Convert.ToInt32(DBConfig.sqlite_dataReader["chineseScore"]);
+                    int englishScore = Convert.ToInt32(DBConfig.sqlite_dataReader["englishScore"]);
+                    int mathScore = Convert.ToInt32(DBConfig.sqlite_dataReader["mathScore"]);
+
+                    public_serial = serial;
+                    DataGridViewRowCollection rows = dataGridView1.Rows;
+                    rows.Add(new Object[] { serial, name, id, height, weight, bmi, chineseScore, englishScore, mathScore });
+                }
+                DBConfig.sqlite_dataReader.Close();
             }
-            DBConfig.sqlite_dataReader.Close();
+            catch
+            {
+                MessageBox.Show("無法存取資料庫!\n資料庫檔案可能毀損、遺失\r或被其他應用程式存取之中",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void addDataBtn_Click(object sender, EventArgs e)

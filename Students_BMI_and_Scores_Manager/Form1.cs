@@ -19,7 +19,9 @@ namespace Students_BMI_and_Scores_Manager
             InitializeComponent();
             change_dataGridView1_font();
             load_DB();//程式初始化, 載入dataBase
+            publicVariables.id += 1;//最後一筆讀入的id再加1即為下一筆要輸入進去的資料id
             idLabel.Text = publicVariables.id.ToString();//改變idLabel的數值
+            updateChart();//初始化載入資料後更新圖表
         }
 
         public class publicVariables

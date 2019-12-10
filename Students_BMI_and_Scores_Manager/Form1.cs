@@ -124,12 +124,19 @@ namespace Students_BMI_and_Scores_Manager
                         , MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (d == DialogResult.Yes)
                     {
-                        publicVariables.bmi = publicVariables.weight / (publicVariables.height * publicVariables.height);
-                        dataGridView1.Rows.Add(new object[] { publicVariables.id, publicVariables.name, publicVariables.height, publicVariables.weight, publicVariables.bmi });
-                        publicVariables.id += 1;
-                        idLabel.Text = publicVariables.id.ToString();
+                        publicVariables.bmi = publicVariables.weight / (publicVariables.height * publicVariables.height);//計算BMI
+
+                        string sql = @"INSERT INTO record(id,name,height,weight,BMI,chineseScore,englishScore,mathScore) VALUES(" + publicVariables.id.ToString() + ",'" + publicVariables.name + "'," + publicVariables.height.ToString() + "," + publicVariables.weight.ToString() + ","+publicVariables.bmi.ToString()+"," + publicVariables.chineseScore.ToString() + "," + publicVariables.englishScore.ToString() + "," + publicVariables.mathScore.ToString() + ");";
+                        //宣告一個字串存放要執行的SQL指令
+                        DBConfig.sqlite_cmd = new SQLiteCommand(sql, DBConfig.sqlite_connect);
+                        DBConfig.sqlite_cmd.ExecuteNonQuery();//執行SQL指令(寫入)
+
+                        show_DB();//把資料庫讀取出來並顯示於dataGridView上
 
                         updateChart();//新增資料後，更新圖表
+
+                        publicVariables.id += 1;//更新id
+                        idLabel.Text = publicVariables.id.ToString();
                     }
                     else
                     {
@@ -138,11 +145,19 @@ namespace Students_BMI_and_Scores_Manager
                 }
                 else
                 {
-                    publicVariables.bmi = publicVariables.weight / (publicVariables.height * publicVariables.height);
-                    dataGridView1.Rows.Add(new object[] { publicVariables.id, publicVariables.name, publicVariables.height, publicVariables.weight, publicVariables.bmi });
-                    publicVariables.id += 1;
-                    idLabel.Text = publicVariables.id.ToString();
+                    publicVariables.bmi = publicVariables.weight / (publicVariables.height * publicVariables.height);//計算BMI
+
+                    string sql = @"INSERT INTO record(id,name,height,weight,BMI,chineseScore,englishScore,mathScore) VALUES(" + publicVariables.id.ToString() + ",'" + publicVariables.name + "'," + publicVariables.height.ToString() + "," + publicVariables.weight.ToString() + "," + publicVariables.bmi.ToString() + "," + publicVariables.chineseScore.ToString() + "," + publicVariables.englishScore.ToString() + "," + publicVariables.mathScore.ToString() + ");";
+                    //宣告一個字串存放要執行的SQL指令
+                    DBConfig.sqlite_cmd = new SQLiteCommand(sql, DBConfig.sqlite_connect);
+                    DBConfig.sqlite_cmd.ExecuteNonQuery();//執行SQL指令(寫入)
+
+                    show_DB();//把資料庫讀取出來並顯示於dataGridView上
+
                     updateChart();//新增資料後，更新圖表
+
+                    publicVariables.id += 1;//更新id
+                    idLabel.Text = publicVariables.id.ToString();
                 }
             }
             catch

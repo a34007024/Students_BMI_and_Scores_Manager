@@ -13,18 +13,30 @@ namespace Students_BMI_and_Scores_Manager
 {
     public partial class Form1 : Form
     {
-        int public_serial = 0;
-        int index = 1;
-        double height;
-        double weight;
-        string name;
-        double bmi;
+        
         public Form1()
         {
             InitializeComponent();
-            idLabel.Text = index.ToString();
+            idLabel.Text = publicVariables.index.ToString();
             change_dataGridView1_font();
             load_DB();//程式初始化, 載入dataBase
+        }
+
+        public class publicVariables
+        {   //用來暫存資料的全域變數
+            //把全域變數包在一個class可以避免該變數變成無人管的變數
+            //在未來專案要多人合作時，可避免某一個變數出錯
+            //找不到人來負責處理的窘境
+            //宣告成static則可以不用new一個Object即可調用該變數
+            public static int serial = 0;
+            public static int index = 1;
+            public static double height;
+            public static double weight;
+            public static string name;
+            public static double bmi;
+            public static int chineseScore;
+            public static int englishScore;
+            public static int mathScore;
         }
 
         private void change_dataGridView1_font()
@@ -79,7 +91,7 @@ namespace Students_BMI_and_Scores_Manager
                     int englishScore = Convert.ToInt32(DBConfig.sqlite_dataReader["englishScore"]);
                     int mathScore = Convert.ToInt32(DBConfig.sqlite_dataReader["mathScore"]);
 
-                    public_serial = serial;
+                    publicVariables.serial = serial;
                     DataGridViewRowCollection rows = dataGridView1.Rows;
                     rows.Add(new Object[] { id, name, height, weight, bmi, chineseScore, englishScore, mathScore });
                 }
@@ -96,10 +108,11 @@ namespace Students_BMI_and_Scores_Manager
         {
             try
             {
-                height = double.Parse(heightTextbox.Text);
-                weight = double.Parse(weightTextbox.Text);
-                name = nameTextbox.Text;
-                if (height >= 3 || weight <= 10)
+                publicVariables.height = double.Parse(heightTextbox.Text);
+                publicVariables.weight = double.Parse(weightTextbox.Text);
+                publicVariables.name = nameTextbox.Text;
+
+                if (publicVariables.height >= 3 || publicVariables.weight <= 10)
                 {
                     DialogResult d = MessageBox.Show("請您檢查輸入的資料是否正確!\n" +
                         "您輸入的身高可能高於樓層高度\n您輸入的體重可能輕於中型犬的體重" +
@@ -107,10 +120,10 @@ namespace Students_BMI_and_Scores_Manager
                         , MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (d == DialogResult.Yes)
                     {
-                        bmi = weight / (height * height);
-                        dataGridView1.Rows.Add(new object[] { index, name, height, weight, bmi });
-                        index += 1;
-                        idLabel.Text = index.ToString();
+                        publicVariables.bmi = publicVariables.weight / (publicVariables.height * publicVariables.height);
+                        dataGridView1.Rows.Add(new object[] { publicVariables.index, publicVariables.name, publicVariables.height, publicVariables.weight, publicVariables.bmi });
+                        publicVariables.index += 1;
+                        idLabel.Text = publicVariables.index.ToString();
                         updateChart();//新增資料後，更新圖表
                     }
                     else
@@ -120,10 +133,10 @@ namespace Students_BMI_and_Scores_Manager
                 }
                 else
                 {
-                    bmi = weight / (height * height);
-                    dataGridView1.Rows.Add(new object[] { index, name, height, weight, bmi });
-                    index += 1;
-                    idLabel.Text = index.ToString();
+                    publicVariables.bmi = publicVariables.weight / (publicVariables.height * publicVariables.height);
+                    dataGridView1.Rows.Add(new object[] { publicVariables.index, publicVariables.name, publicVariables.height, publicVariables.weight, publicVariables.bmi });
+                    publicVariables.index += 1;
+                    idLabel.Text = publicVariables.index.ToString();
                     updateChart();//新增資料後，更新圖表
                 }
             }

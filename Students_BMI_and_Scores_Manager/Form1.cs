@@ -17,9 +17,9 @@ namespace Students_BMI_and_Scores_Manager
         public Form1()
         {
             InitializeComponent();
-            idLabel.Text = publicVariables.index.ToString();
             change_dataGridView1_font();
             load_DB();//程式初始化, 載入dataBase
+            idLabel.Text = publicVariables.id.ToString();//改變idLabel的數值
         }
 
         public class publicVariables
@@ -29,7 +29,7 @@ namespace Students_BMI_and_Scores_Manager
             //找不到人來負責處理的窘境
             //宣告成static則可以不用new一個Object即可調用該變數
             public static int serial = 0;
-            public static int index = 1;
+            public static int id = 1;
             public static double height;
             public static double weight;
             public static string name;
@@ -91,6 +91,7 @@ namespace Students_BMI_and_Scores_Manager
                     int englishScore = Convert.ToInt32(DBConfig.sqlite_dataReader["englishScore"]);
                     int mathScore = Convert.ToInt32(DBConfig.sqlite_dataReader["mathScore"]);
 
+                    publicVariables.id = id;//把讀取到的id存在全域變數中(最後一筆的資料便會停駐於此)
                     publicVariables.serial = serial;
                     DataGridViewRowCollection rows = dataGridView1.Rows;
                     rows.Add(new Object[] { id, name, height, weight, bmi, chineseScore, englishScore, mathScore });
@@ -110,6 +111,9 @@ namespace Students_BMI_and_Scores_Manager
             {
                 publicVariables.height = double.Parse(heightTextbox.Text);
                 publicVariables.weight = double.Parse(weightTextbox.Text);
+                publicVariables.chineseScore = int.Parse(chineseScoreTextbox.Text);
+                publicVariables.englishScore = int.Parse(englishScoreTextbox.Text);
+                publicVariables.mathScore = int.Parse(mathScoreTextbox.Text);
                 publicVariables.name = nameTextbox.Text;
 
                 if (publicVariables.height >= 3 || publicVariables.weight <= 10)
@@ -121,9 +125,10 @@ namespace Students_BMI_and_Scores_Manager
                     if (d == DialogResult.Yes)
                     {
                         publicVariables.bmi = publicVariables.weight / (publicVariables.height * publicVariables.height);
-                        dataGridView1.Rows.Add(new object[] { publicVariables.index, publicVariables.name, publicVariables.height, publicVariables.weight, publicVariables.bmi });
-                        publicVariables.index += 1;
-                        idLabel.Text = publicVariables.index.ToString();
+                        dataGridView1.Rows.Add(new object[] { publicVariables.id, publicVariables.name, publicVariables.height, publicVariables.weight, publicVariables.bmi });
+                        publicVariables.id += 1;
+                        idLabel.Text = publicVariables.id.ToString();
+
                         updateChart();//新增資料後，更新圖表
                     }
                     else
@@ -134,9 +139,9 @@ namespace Students_BMI_and_Scores_Manager
                 else
                 {
                     publicVariables.bmi = publicVariables.weight / (publicVariables.height * publicVariables.height);
-                    dataGridView1.Rows.Add(new object[] { publicVariables.index, publicVariables.name, publicVariables.height, publicVariables.weight, publicVariables.bmi });
-                    publicVariables.index += 1;
-                    idLabel.Text = publicVariables.index.ToString();
+                    dataGridView1.Rows.Add(new object[] { publicVariables.id, publicVariables.name, publicVariables.height, publicVariables.weight, publicVariables.bmi });
+                    publicVariables.id += 1;
+                    idLabel.Text = publicVariables.id.ToString();
                     updateChart();//新增資料後，更新圖表
                 }
             }

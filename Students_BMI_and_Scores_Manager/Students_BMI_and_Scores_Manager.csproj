@@ -106,6 +106,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bars-chart.ico" />
+    <None Include="Resources\floatingData-part1.gif" />
     <None Include="Resources\北護LOGO.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -69,7 +69,7 @@ namespace Students_BMI_and_Scores_Manager
             show_DB();
         }
 
-        private void show_DB()
+        private void show_DB()//把資料庫的資料顯示在dataGridView上(更新idLabel的功能也在此)
         {
             try
             {

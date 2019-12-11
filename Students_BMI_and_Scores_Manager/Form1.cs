@@ -19,8 +19,6 @@ namespace Students_BMI_and_Scores_Manager
             InitializeComponent();
             change_dataGridView1_font();
             load_DB();//程式初始化, 載入dataBase
-            publicVariables.id += 1;//最後一筆讀入的id再加1即為下一筆要輸入進去的資料id
-            idLabel.Text = publicVariables.id.ToString();//改變idLabel的數值
             updateChart();//初始化載入資料後更新圖表
         }
 
@@ -99,6 +97,9 @@ namespace Students_BMI_and_Scores_Manager
                     rows.Add(new Object[] { id, name, height, weight, bmi, chineseScore, englishScore, mathScore });
                 }
                 DBConfig.sqlite_dataReader.Close();
+                //資料庫資料讀取完畢
+                publicVariables.id += 1;//最後一筆讀入的id再加1即為下一筆要輸入進去的資料id
+                idLabel.Text = publicVariables.id.ToString();//改變idLabel的數值
             }
             catch
             {
@@ -249,26 +250,39 @@ namespace Students_BMI_and_Scores_Manager
         {
             try
             {
-                for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
-                {
-                    if (dataGridView1.Rows[i].Cells[0].Value.ToString() == this.idLabel.Text)
-                    {
-                        dataGridView1.Rows[i].Cells[1].Value = nameTextbox.Text;
-                        dataGridView1.Rows[i].Cells[2].Value = heightTextbox.Text;
-                        dataGridView1.Rows[i].Cells[3].Value = weightTextbox.Text;
-                        // 計算BMI
-                        dataGridView1.Rows[i].Cells[4].Value = double.Parse(weightTextbox.Text) / (double.Parse(heightTextbox.Text) * double.Parse(heightTextbox.Text));
-                        break;
-                    }
+                publicVariables.id = int.Parse(idLabel.Text);
+                publicVariables.height = double.Parse(heightTextbox.Text);
+                publicVariables.weight = double.Parse(weightTextbox.Text);
+                publicVariables.chineseScore = int.Parse(chineseScoreTextbox.Text);
+                publicVariables.englishScore = int.Parse(englishScoreTextbox.Text);
+                publicVariables.mathScore = int.Parse(mathScoreTextbox.Text);
+                publicVariables.name = nameTextbox.Text;
 
-                }
-                //updateChart();
+                publicVariables.bmi = publicVariables.weight / (publicVariables.height * publicVariables.height);//計算BMI
+
+                string sql = @"UPDATE record SET name='" + publicVariables.name + "',height=" + publicVariables.height.ToString() +
+                    ",weight=" + publicVariables.weight.ToString() +
+                    ",BMI=" + publicVariables.bmi.ToString() +
+                    ",chineseScore=" + publicVariables.chineseScore.ToString() +
+                    ",englishScore=" + publicVariables.englishScore.ToString() +
+                    ",mathScore=" + publicVariables.mathScore.ToString() +
+                    " where id = " + publicVariables.id.ToString() + ";";
+                //宣告一個字串存放要執行的SQL指令
+                DBConfig.sqlite_cmd = new SQLiteCommand(sql, DBConfig.sqlite_connect);
+                DBConfig.sqlite_cmd.ExecuteNonQuery();//執行SQL指令(寫入)
+
+                show_DB();//把資料庫讀取出來並顯示於dataGridView上
+
             }
             catch
             {
                 MessageBox.Show("輸入有誤!請檢查!", "Error"
                     , MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void delDataBtn_Click(object sender, EventArgs e)
+        {
 
         }
     }

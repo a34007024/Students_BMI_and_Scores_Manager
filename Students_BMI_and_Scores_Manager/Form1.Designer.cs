@@ -63,6 +63,7 @@
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.delDataBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -233,9 +234,9 @@
             // 
             this.addDataBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.addDataBtn.Font = new System.Drawing.Font("微軟正黑體", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.addDataBtn.Location = new System.Drawing.Point(65, 520);
+            this.addDataBtn.Location = new System.Drawing.Point(16, 520);
             this.addDataBtn.Name = "addDataBtn";
-            this.addDataBtn.Size = new System.Drawing.Size(248, 63);
+            this.addDataBtn.Size = new System.Drawing.Size(222, 63);
             this.addDataBtn.TabIndex = 9;
             this.addDataBtn.Text = "新增資料";
             this.addDataBtn.UseVisualStyleBackColor = true;
@@ -245,9 +246,9 @@
             // 
             this.editDataBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.editDataBtn.Font = new System.Drawing.Font("微軟正黑體", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.editDataBtn.Location = new System.Drawing.Point(65, 589);
+            this.editDataBtn.Location = new System.Drawing.Point(16, 589);
             this.editDataBtn.Name = "editDataBtn";
-            this.editDataBtn.Size = new System.Drawing.Size(248, 63);
+            this.editDataBtn.Size = new System.Drawing.Size(222, 63);
             this.editDataBtn.TabIndex = 10;
             this.editDataBtn.Text = "修改資料";
             this.editDataBtn.UseVisualStyleBackColor = true;
@@ -365,7 +366,7 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::Students_BMI_and_Scores_Manager.Properties.Resources.北護LOGO;
-            this.pictureBox1.Location = new System.Drawing.Point(371, 520);
+            this.pictureBox1.Location = new System.Drawing.Point(694, 520);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(552, 138);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -383,12 +384,25 @@
             this.pictureBox2.TabIndex = 19;
             this.pictureBox2.TabStop = false;
             // 
+            // delDataBtn
+            // 
+            this.delDataBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.delDataBtn.Font = new System.Drawing.Font("微軟正黑體", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.delDataBtn.Location = new System.Drawing.Point(244, 520);
+            this.delDataBtn.Name = "delDataBtn";
+            this.delDataBtn.Size = new System.Drawing.Size(222, 63);
+            this.delDataBtn.TabIndex = 20;
+            this.delDataBtn.Text = "刪除資料";
+            this.delDataBtn.UseVisualStyleBackColor = true;
+            this.delDataBtn.Click += new System.EventHandler(this.delDataBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1258, 664);
+            this.Controls.Add(this.delDataBtn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.tabControl1);
@@ -456,6 +470,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button delDataBtn;
     }
 }
 

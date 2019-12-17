@@ -291,5 +291,45 @@ namespace Students_BMI_and_Scores_Manager
         {
 
         }
+
+        private void calculateAverageBtn_Click(object sender, EventArgs e)
+        {
+            int count = dataGridView1.Rows.Count;
+            double heightTotal = 0;
+            double heightAvg = 0;
+            double weightTotal = 0;
+            double weightAvg = 0;
+            double bmiTotal = 0;
+            double bmiAvg = 0;
+            double chScoreTotal = 0;
+            double chScoreAvg = 0;
+            double enScoreTotal = 0;
+            double enScoreAvg = 0;
+            double mathScoreTotal = 0;
+            double mathScoreAvg = 0;
+            for (int i = 0; i < count; i++)
+            {
+                heightTotal = heightTotal + Convert.ToDouble(dataGridView1.Rows[i].Cells[2].Value);
+                weightTotal = weightTotal + Convert.ToDouble(dataGridView1.Rows[i].Cells[3].Value);
+                bmiTotal += Convert.ToDouble(dataGridView1.Rows[i].Cells[4].Value);
+                chScoreTotal += Convert.ToDouble(dataGridView1.Rows[i].Cells[5].Value);
+                enScoreTotal += Convert.ToDouble(dataGridView1.Rows[i].Cells[6].Value);
+                mathScoreTotal += Convert.ToDouble(dataGridView1.Rows[i].Cells[7].Value);
+            }
+            heightAvg = heightTotal / (count - 1);//count要減一 是因為有一列空白欄位
+            weightAvg = weightTotal / (count - 1);
+            bmiAvg = bmiTotal / (count - 1);
+            chScoreAvg = chScoreTotal / (count - 1);
+            enScoreAvg = enScoreTotal / (count - 1);
+            mathScoreAvg = mathScoreTotal / (count - 1);
+
+            MessageBox.Show("總人數:" + (count - 1) +
+                "\n平均身高為:" + heightAvg.ToString() + "公尺(m)" +
+                "\n平均體重為:" + weightAvg.ToString() + "公斤(kg)" +
+                "\n平均BMI為:" + bmiAvg.ToString() +
+                "\n平均國文成績為:" + chScoreAvg.ToString() +
+                "\n平均英文成績為:" + enScoreAvg.ToString() +
+                "\n平均數學成績為:" + mathScoreAvg.ToString());
+        }
     }
 }

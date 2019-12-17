@@ -340,6 +340,7 @@
             this.calculateAverageBtn.TabIndex = 21;
             this.calculateAverageBtn.Text = "計算平均值";
             this.calculateAverageBtn.UseVisualStyleBackColor = true;
+            this.calculateAverageBtn.Click += new System.EventHandler(this.calculateAverageBtn_Click);
             // 
             // exportBtn
             // 

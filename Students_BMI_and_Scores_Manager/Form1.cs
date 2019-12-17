@@ -138,8 +138,7 @@ namespace Students_BMI_and_Scores_Manager
                         show_DB();//把資料庫讀取出來並顯示於dataGridView上
 
                         updateChart();//新增資料後，更新圖表
-
-                        publicVariables.id += 1;//更新id
+                        //因為show_DB()內已經有寫自動編號功能，因此此處不必再處理
                         idLabel.Text = publicVariables.id.ToString();
                     }
                     else
@@ -159,8 +158,7 @@ namespace Students_BMI_and_Scores_Manager
                     show_DB();//把資料庫讀取出來並顯示於dataGridView上
 
                     updateChart();//新增資料後，更新圖表
-
-                    publicVariables.id += 1;//更新id
+                    //因為show_DB()內已經有寫自動編號功能，因此此處不必再處理
                     idLabel.Text = publicVariables.id.ToString();
                 }
             }

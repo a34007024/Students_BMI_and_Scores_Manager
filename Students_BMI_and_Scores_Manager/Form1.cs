@@ -297,7 +297,51 @@ namespace Students_BMI_and_Scores_Manager
             //MessageBox.Show(selectedFunction.ToString());//debug用，顯示form2回傳的值
             if(selectedFunction == 1)//匯出資料(excel)
             {
-                
+                SaveFileDialog save = new SaveFileDialog();
+                save.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);//設定初始存檔資料夾位置
+                save.FileName = "Export_Data";
+                save.Filter = "*.xlsx|*.xlsx";//指定輸出格式
+                if (save.ShowDialog() != DialogResult.OK) return;//如果選了取消，就不往後執行
+
+                // Excel 物件
+                Excel.Application xls = null;
+                try
+                {
+                    xls = new Excel.Application();
+                    // Excel WorkBook
+                    Excel.Workbook book = xls.Workbooks.Add();
+                    //Excel.Worksheet Sheet = (Excel.Worksheet)book.Worksheets[1];
+                    Excel.Worksheet Sheet = xls.ActiveSheet;
+
+                    // 把 DataGridView 資料塞進 Excel 內
+
+                    // 把DataGridView 標題輸入進excel表格
+                    for (int k = 0; k < this.dataGridView1.Columns.Count; k++)
+                    {
+                        Sheet.Cells[1, k + 1] = this.dataGridView1.Columns[k].HeaderText.ToString();
+                    }
+
+                    // 把DataGridView 內容輸入進excel表格
+                    for (int i = 0; i < this.dataGridView1.Rows.Count - 1; i++)
+                    {
+                        for (int j = 0; j < this.dataGridView1.Columns.Count; j++)
+                        {
+                            string value = dataGridView1.Rows[i].Cells[j].Value.ToString();
+                            Sheet.Cells[i + 2, j + 1] = value;
+                        }
+                    }
+
+                    // 儲存檔案
+                    book.SaveAs(save.FileName);
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    xls.Quit();
+                }
             }
             else if(selectedFunction == 2)//匯出圖表(excel)
             {

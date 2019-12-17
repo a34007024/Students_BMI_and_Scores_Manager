@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;//導入存取SQLite的函式庫
-using Excel = Microsoft.Office.Interop.Excel;
+using Excel = Microsoft.Office.Interop.Excel;//Import Excel 的關聯函式庫
 
 namespace Students_BMI_and_Scores_Manager
 {
@@ -184,6 +184,8 @@ namespace Students_BMI_and_Scores_Manager
             englishScoreTextbox.Text = Convert.ToString(selRowData[6].Value);
             mathScoreTextbox.Text = Convert.ToString(selRowData[7].Value);
             publicVariables.serial = Convert.ToInt32(selRowData[8].Value);//儲存選定列的serial
+            //因為serial於資料庫中是設定為自動增加的，相較於idLabel的值，不用擔心有重複的問題
+            //所以用serial來鎖定選定的資料欄位比較合適
         }
 
         //下面的函式是用來畫統計圖表的
@@ -259,7 +261,9 @@ namespace Students_BMI_and_Scores_Manager
                     ",englishScore=" + publicVariables.englishScore.ToString() +
                     ",mathScore=" + publicVariables.mathScore.ToString() +
                     " where serial = " + publicVariables.serial.ToString() + ";";//利用資料庫內的serial來決定要更改的資料列
-                //宣告一個字串存放要執行的SQL指令
+                                                                                 //因為serial於資料庫中是設定為自動增加的，相較於idLabel的值，不用擔心有重複的問題
+                                                                                 //所以用serial來鎖定選定的資料欄位比較合適
+                                                                                 //宣告一個字串存放要執行的SQL指令
                 DBConfig.sqlite_cmd = new SQLiteCommand(sql, DBConfig.sqlite_connect);
                 DBConfig.sqlite_cmd.ExecuteNonQuery();//執行SQL指令(寫入)
 
@@ -277,6 +281,8 @@ namespace Students_BMI_and_Scores_Manager
         {
             string sql = @"DELETE from record " +
                                       "  where serial = " + publicVariables.serial.ToString() + ";";
+            //因為serial於資料庫中是設定為自動增加的，相較於idLabel的值，不用擔心有重複的問題
+            //所以用serial來鎖定選定的資料欄位比較合適
 
             DBConfig.sqlite_cmd = new SQLiteCommand(sql, DBConfig.sqlite_connect);
             DBConfig.sqlite_cmd.ExecuteNonQuery();

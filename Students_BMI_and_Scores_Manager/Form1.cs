@@ -295,8 +295,26 @@ namespace Students_BMI_and_Scores_Manager
             f2.Owner = this;//重要的一步，使Form2的Owner指針指向Form1
             f2.ShowDialog();
             MessageBox.Show(selectedFunction.ToString());//debug用，顯示form2回傳的值
+            if(selectedFunction == 1)//匯出資料(excel)
+            {
+                
+            }
+            else if(selectedFunction == 2)//匯出圖表(excel)
+            {
 
+            }
+            else if(selectedFunction == 3)//匯出資料(csv)
+            {
 
+            }
+            else if(selectedFunction == 4)//匯出圖表(jpg)
+            {
+
+            }
+            else
+            {
+                //do nothing
+            }
         }
 
         private void calculateAverageBtn_Click(object sender, EventArgs e)

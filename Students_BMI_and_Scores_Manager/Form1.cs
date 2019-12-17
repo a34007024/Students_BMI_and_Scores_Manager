@@ -275,7 +275,12 @@ namespace Students_BMI_and_Scores_Manager
 
         private void delDataBtn_Click(object sender, EventArgs e)
         {
+            string sql = @"DELETE from record " +
+                                      "  where serial = " + publicVariables.serial.ToString() + ";";
 
+            DBConfig.sqlite_cmd = new SQLiteCommand(sql, DBConfig.sqlite_connect);
+            DBConfig.sqlite_cmd.ExecuteNonQuery();
+            show_DB();
         }
 
         private void exportBtn_Click(object sender, EventArgs e)

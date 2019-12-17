@@ -95,7 +95,7 @@ namespace Students_BMI_and_Scores_Manager
                     publicVariables.id = id;//把讀取到的id存在全域變數中(最後一筆的資料便會停駐於此)
                     publicVariables.serial = serial;
                     DataGridViewRowCollection rows = dataGridView1.Rows;
-                    rows.Add(new Object[] { id, name, height, weight, bmi, chineseScore, englishScore, mathScore });
+                    rows.Add(new Object[] { id, name, height, weight, bmi, chineseScore, englishScore, mathScore, serial });
                 }
                 DBConfig.sqlite_dataReader.Close();
                 //資料庫資料讀取完畢
@@ -183,6 +183,7 @@ namespace Students_BMI_and_Scores_Manager
             chineseScoreTextbox.Text = Convert.ToString(selRowData[5].Value);
             englishScoreTextbox.Text = Convert.ToString(selRowData[6].Value);
             mathScoreTextbox.Text = Convert.ToString(selRowData[7].Value);
+            publicVariables.serial = Convert.ToInt32(selRowData[8].Value);//儲存選定列的serial
         }
 
         //下面的函式是用來畫統計圖表的
@@ -257,7 +258,7 @@ namespace Students_BMI_and_Scores_Manager
                     ",chineseScore=" + publicVariables.chineseScore.ToString() +
                     ",englishScore=" + publicVariables.englishScore.ToString() +
                     ",mathScore=" + publicVariables.mathScore.ToString() +
-                    " where id = " + publicVariables.id.ToString() + ";";
+                    " where serial = " + publicVariables.serial.ToString() + ";";//利用資料庫內的serial來決定要更改的資料列
                 //宣告一個字串存放要執行的SQL指令
                 DBConfig.sqlite_cmd = new SQLiteCommand(sql, DBConfig.sqlite_connect);
                 DBConfig.sqlite_cmd.ExecuteNonQuery();//執行SQL指令(寫入)

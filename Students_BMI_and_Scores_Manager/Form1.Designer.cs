@@ -63,6 +63,9 @@
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.delDataBtn = new System.Windows.Forms.Button();
+            this.calculateAverageBtn = new System.Windows.Forms.Button();
+            this.exportBtn = new System.Windows.Forms.Button();
+            this.randomBigDataBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -383,12 +386,48 @@
             this.delDataBtn.UseVisualStyleBackColor = true;
             this.delDataBtn.Click += new System.EventHandler(this.delDataBtn_Click);
             // 
+            // calculateAverageBtn
+            // 
+            this.calculateAverageBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.calculateAverageBtn.Font = new System.Drawing.Font("微軟正黑體", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.calculateAverageBtn.Location = new System.Drawing.Point(244, 589);
+            this.calculateAverageBtn.Name = "calculateAverageBtn";
+            this.calculateAverageBtn.Size = new System.Drawing.Size(222, 63);
+            this.calculateAverageBtn.TabIndex = 21;
+            this.calculateAverageBtn.Text = "計算平均值";
+            this.calculateAverageBtn.UseVisualStyleBackColor = true;
+            // 
+            // exportBtn
+            // 
+            this.exportBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.exportBtn.Font = new System.Drawing.Font("微軟正黑體", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.exportBtn.Location = new System.Drawing.Point(472, 520);
+            this.exportBtn.Name = "exportBtn";
+            this.exportBtn.Size = new System.Drawing.Size(222, 63);
+            this.exportBtn.TabIndex = 22;
+            this.exportBtn.Text = "匯出...";
+            this.exportBtn.UseVisualStyleBackColor = true;
+            // 
+            // randomBigDataBtn
+            // 
+            this.randomBigDataBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.randomBigDataBtn.Font = new System.Drawing.Font("微軟正黑體", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.randomBigDataBtn.Location = new System.Drawing.Point(472, 589);
+            this.randomBigDataBtn.Name = "randomBigDataBtn";
+            this.randomBigDataBtn.Size = new System.Drawing.Size(222, 63);
+            this.randomBigDataBtn.TabIndex = 23;
+            this.randomBigDataBtn.Text = "隨機生成";
+            this.randomBigDataBtn.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1258, 664);
+            this.Controls.Add(this.randomBigDataBtn);
+            this.Controls.Add(this.exportBtn);
+            this.Controls.Add(this.calculateAverageBtn);
             this.Controls.Add(this.delDataBtn);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.mathScoreTextbox);
@@ -455,6 +494,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.Button delDataBtn;
+        private System.Windows.Forms.Button calculateAverageBtn;
+        private System.Windows.Forms.Button exportBtn;
+        private System.Windows.Forms.Button randomBigDataBtn;
     }
 }
 

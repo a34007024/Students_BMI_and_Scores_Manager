@@ -287,8 +287,15 @@ namespace Students_BMI_and_Scores_Manager
             show_DB();
         }
 
+        public int selectedFunction = 0;
         private void exportBtn_Click(object sender, EventArgs e)
         {
+            selectedFunction = 0;
+            Form2 f2 = new Form2();
+            f2.Owner = this;//重要的一步，使Form2的Owner指針指向Form1
+            f2.ShowDialog();
+            MessageBox.Show(selectedFunction.ToString());//debug用，顯示form2回傳的值
+
 
         }
 

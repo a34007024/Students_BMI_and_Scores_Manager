@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;//導入存取SQLite的函式庫
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Students_BMI_and_Scores_Manager
 {
@@ -170,16 +171,6 @@ namespace Students_BMI_and_Scores_Manager
             }
         }
 
-        private void heightTextbox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void weightTextbox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void double_click(object sender, DataGridViewCellMouseEventArgs e)
             //雙擊資料表的三角標籤可修改該列資料
         {
@@ -282,6 +273,11 @@ namespace Students_BMI_and_Scores_Manager
         }
 
         private void delDataBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void exportBtn_Click(object sender, EventArgs e)
         {
 
         }

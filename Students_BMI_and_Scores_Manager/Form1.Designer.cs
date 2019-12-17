@@ -199,7 +199,6 @@
             this.heightTextbox.Name = "heightTextbox";
             this.heightTextbox.Size = new System.Drawing.Size(150, 50);
             this.heightTextbox.TabIndex = 5;
-            this.heightTextbox.TextChanged += new System.EventHandler(this.heightTextbox_TextChanged);
             // 
             // label4
             // 
@@ -229,7 +228,6 @@
             this.weightTextbox.Name = "weightTextbox";
             this.weightTextbox.Size = new System.Drawing.Size(150, 50);
             this.weightTextbox.TabIndex = 8;
-            this.weightTextbox.TextChanged += new System.EventHandler(this.weightTextbox_TextChanged);
             // 
             // addDataBtn
             // 
@@ -407,6 +405,7 @@
             this.exportBtn.TabIndex = 22;
             this.exportBtn.Text = "匯出...";
             this.exportBtn.UseVisualStyleBackColor = true;
+            this.exportBtn.Click += new System.EventHandler(this.exportBtn_Click);
             // 
             // randomBigDataBtn
             // 

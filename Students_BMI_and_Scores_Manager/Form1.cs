@@ -461,5 +461,10 @@ namespace Students_BMI_and_Scores_Manager
             f3.Owner = this;//重要的一步，使Form2的Owner指針指向Form1
             f3.ShowDialog();
         }
+
+        private void Form1_MouseClick(object sender, MouseEventArgs e)
+        {
+            this.TopMost = false;//滑鼠點擊視窗後取消掉固定在最上層
+        }
     }
 }

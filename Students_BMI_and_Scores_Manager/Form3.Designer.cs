@@ -90,6 +90,7 @@
             // nameStartIDtextBox
             // 
             this.nameStartIDtextBox.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.nameStartIDtextBox.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.nameStartIDtextBox.Location = new System.Drawing.Point(186, 4);
             this.nameStartIDtextBox.MaxLength = 10;
             this.nameStartIDtextBox.Name = "nameStartIDtextBox";
@@ -100,6 +101,7 @@
             // minHeightTextBox
             // 
             this.minHeightTextBox.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.minHeightTextBox.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.minHeightTextBox.Location = new System.Drawing.Point(186, 46);
             this.minHeightTextBox.MaxLength = 3;
             this.minHeightTextBox.Name = "minHeightTextBox";
@@ -120,6 +122,7 @@
             // minWeightTextBox
             // 
             this.minWeightTextBox.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.minWeightTextBox.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.minWeightTextBox.Location = new System.Drawing.Point(186, 90);
             this.minWeightTextBox.MaxLength = 3;
             this.minWeightTextBox.Name = "minWeightTextBox";
@@ -140,6 +143,7 @@
             // maxHeightTextBox
             // 
             this.maxHeightTextBox.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.maxHeightTextBox.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.maxHeightTextBox.Location = new System.Drawing.Point(345, 48);
             this.maxHeightTextBox.MaxLength = 3;
             this.maxHeightTextBox.Name = "maxHeightTextBox";
@@ -150,6 +154,7 @@
             // maxWeightTextBox
             // 
             this.maxWeightTextBox.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.maxWeightTextBox.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.maxWeightTextBox.Location = new System.Drawing.Point(345, 90);
             this.maxWeightTextBox.MaxLength = 3;
             this.maxWeightTextBox.Name = "maxWeightTextBox";
@@ -170,6 +175,7 @@
             // maxCHscoreTextBox
             // 
             this.maxCHscoreTextBox.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.maxCHscoreTextBox.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.maxCHscoreTextBox.Location = new System.Drawing.Point(345, 132);
             this.maxCHscoreTextBox.MaxLength = 3;
             this.maxCHscoreTextBox.Name = "maxCHscoreTextBox";
@@ -180,6 +186,7 @@
             // minCHscoreTextBox
             // 
             this.minCHscoreTextBox.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.minCHscoreTextBox.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.minCHscoreTextBox.Location = new System.Drawing.Point(186, 132);
             this.minCHscoreTextBox.MaxLength = 3;
             this.minCHscoreTextBox.Name = "minCHscoreTextBox";
@@ -190,6 +197,7 @@
             // maxENscoreTextBox
             // 
             this.maxENscoreTextBox.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.maxENscoreTextBox.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.maxENscoreTextBox.Location = new System.Drawing.Point(345, 174);
             this.maxENscoreTextBox.MaxLength = 3;
             this.maxENscoreTextBox.Name = "maxENscoreTextBox";
@@ -200,6 +208,7 @@
             // minENscoreTextBox
             // 
             this.minENscoreTextBox.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.minENscoreTextBox.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.minENscoreTextBox.Location = new System.Drawing.Point(186, 174);
             this.minENscoreTextBox.MaxLength = 3;
             this.minENscoreTextBox.Name = "minENscoreTextBox";
@@ -220,6 +229,7 @@
             // maxMATHscoreTextBox
             // 
             this.maxMATHscoreTextBox.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.maxMATHscoreTextBox.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.maxMATHscoreTextBox.Location = new System.Drawing.Point(345, 216);
             this.maxMATHscoreTextBox.MaxLength = 3;
             this.maxMATHscoreTextBox.Name = "maxMATHscoreTextBox";
@@ -230,6 +240,7 @@
             // minMATHscoreTextBox
             // 
             this.minMATHscoreTextBox.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.minMATHscoreTextBox.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.minMATHscoreTextBox.Location = new System.Drawing.Point(186, 216);
             this.minMATHscoreTextBox.MaxLength = 3;
             this.minMATHscoreTextBox.Name = "minMATHscoreTextBox";
@@ -311,6 +322,7 @@
             // dataCountTextBox
             // 
             this.dataCountTextBox.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.dataCountTextBox.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.dataCountTextBox.Location = new System.Drawing.Point(537, 4);
             this.dataCountTextBox.MaxLength = 10;
             this.dataCountTextBox.Name = "dataCountTextBox";

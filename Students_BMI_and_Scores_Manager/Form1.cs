@@ -486,7 +486,7 @@ namespace Students_BMI_and_Scores_Manager
                 for (int i = 0; i < dataCount; i++)
                 {
                     double randomH = Convert.ToDouble(rnd.Next(minHeight, maxHeight)) / 100;
-                    double randomW = Convert.ToDouble(rnd.Next(minWeight, maxWeight)) / 100;
+                    double randomW = Convert.ToDouble(rnd.Next(minWeight, maxWeight));
                     publicVariables.height = randomH;
                     publicVariables.weight = randomW;
                     publicVariables.chineseScore = rnd.Next(minCHscore, maxCHscore);

@@ -37,6 +37,7 @@ namespace Students_BMI_and_Scores_Manager
             Form1 f1 = (Form1)this.Owner;//把Form2的父窗口指針賦予給f1
             f1.selectedFunction = 3;//使用父窗口指針賦予值
             this.Close();
+            //export CSV function has not finished yet
         }
 
         private void button4_Click(object sender, EventArgs e)

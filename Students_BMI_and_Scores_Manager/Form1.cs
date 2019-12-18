@@ -299,7 +299,7 @@ namespace Students_BMI_and_Scores_Manager
             {
                 SaveFileDialog save = new SaveFileDialog();
                 save.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);//設定初始存檔資料夾位置
-                save.FileName = "Export_Data";
+                save.FileName = "Export_xlsx_Data";
                 save.Filter = "*.xlsx|*.xlsx";//指定輸出格式
                 if (save.ShowDialog() != DialogResult.OK) return;//如果選了取消，就不往後執行
 
@@ -349,7 +349,7 @@ namespace Students_BMI_and_Scores_Manager
             }
             else if(selectedFunction == 3)//匯出資料(csv)
             {
-
+                //export CSV function has not finished yet
             }
             else if(selectedFunction == 4)//匯出圖表(jpg)
             {

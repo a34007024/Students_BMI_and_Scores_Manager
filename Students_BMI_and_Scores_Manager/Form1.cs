@@ -456,8 +456,10 @@ namespace Students_BMI_and_Scores_Manager
 
         private void randomBigDataBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("敬請期待!", "施工中...最後更新日期:2019/12/18", 
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //MessageBox.Show("敬請期待!", "施工中...最後更新日期:2019/12/18", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Form3 f3 = new Form3();
+            f3.Owner = this;//重要的一步，使Form2的Owner指針指向Form1
+            f3.ShowDialog();
         }
     }
 }

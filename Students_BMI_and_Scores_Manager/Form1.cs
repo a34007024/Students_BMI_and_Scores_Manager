@@ -71,7 +71,8 @@ namespace Students_BMI_and_Scores_Manager
 
             show_DB();
             if(publicVariables.successfulLoadDatabase == true)
-                MessageBox.Show("資料庫連結成功!", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("資料庫連結成功!", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information,
+                    MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);//設定此彈出視窗為最上層
         }
 
         private void show_DB()//把資料庫的資料顯示在dataGridView上(更新idLabel的功能也在此)

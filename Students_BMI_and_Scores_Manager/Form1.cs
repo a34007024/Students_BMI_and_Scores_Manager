@@ -502,6 +502,7 @@ namespace Students_BMI_and_Scores_Manager
                     DBConfig.sqlite_cmd.ExecuteNonQuery();//執行SQL指令(寫入)
 
                     nameStartID += 1;//更新下一位隨機生成數據的名字
+                    publicVariables.id += 1;//更新下一筆隨機生成數據的ID
                 }
                 //儲存完多筆資料後再更新圖表即顯示於dataGridView上
                 show_DB();//把資料庫讀取出來並顯示於dataGridView上

@@ -300,10 +300,10 @@ namespace Students_BMI_and_Scores_Manager
         public int selectedFunction = 0;
         public int nameStartID = 0;
         public int dataCount = 0;
-        public double minHeight = 0;
-        public double maxHeight = 0;
-        public double minWeight = 0;
-        public double maxWeight = 0;
+        public int minHeight = 0;
+        public int maxHeight = 0;
+        public int minWeight = 0;
+        public int maxWeight = 0;
         public int minCHscore = 0;
         public int maxCHscore = 0;
         public int minENscore = 0;
@@ -477,13 +477,35 @@ namespace Students_BMI_and_Scores_Manager
 
         private void randomBigDataBtn_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show("敬請期待!", "施工中...最後更新日期:2019/12/18", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Form3 f3 = new Form3();
             f3.Owner = this;//重要的一步，使Form2的Owner指針指向Form1
             f3.ShowDialog();
             if(randomBigDataPageReturnStatus == 1)
             {
+                Random rnd = new Random();
+                for (int i = 0; i < dataCount; i++)
+                {
+                    double randomH = Convert.ToDouble(rnd.Next(minHeight, maxHeight)) / 100;
+                    double randomW = Convert.ToDouble(rnd.Next(minWeight, maxWeight)) / 100;
+                    publicVariables.height = randomH;
+                    publicVariables.weight = randomW;
+                    publicVariables.chineseScore = rnd.Next(minCHscore, maxCHscore);
+                    publicVariables.englishScore = rnd.Next(minENscore, maxENscore);
+                    publicVariables.mathScore = rnd.Next(minMATHscore, maxMATHscore);
+                    publicVariables.name = "Random" + nameStartID.ToString();
 
+                    publicVariables.bmi = publicVariables.weight / (publicVariables.height * publicVariables.height);//計算BMI
+
+                    string sql = @"INSERT INTO record(id,name,height,weight,BMI,chineseScore,englishScore,mathScore) VALUES(" + publicVariables.id.ToString() + ",'" + publicVariables.name + "'," + publicVariables.height.ToString() + "," + publicVariables.weight.ToString() + "," + publicVariables.bmi.ToString() + "," + publicVariables.chineseScore.ToString() + "," + publicVariables.englishScore.ToString() + "," + publicVariables.mathScore.ToString() + ");";
+                    //宣告一個字串存放要執行的SQL指令
+                    DBConfig.sqlite_cmd = new SQLiteCommand(sql, DBConfig.sqlite_connect);
+                    DBConfig.sqlite_cmd.ExecuteNonQuery();//執行SQL指令(寫入)
+
+                    nameStartID += 1;//更新下一位隨機生成數據的名字
+                }
+                //儲存完多筆資料後再更新圖表即顯示於dataGridView上
+                show_DB();//把資料庫讀取出來並顯示於dataGridView上
+                updateChart();//新增資料後，更新圖表
             }
             else
             {

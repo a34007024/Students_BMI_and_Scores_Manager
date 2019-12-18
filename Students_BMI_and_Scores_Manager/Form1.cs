@@ -14,7 +14,7 @@ namespace Students_BMI_and_Scores_Manager
 {
     public partial class Form1 : Form
     {
-        
+
         public Form1()
         {
             InitializeComponent();
@@ -41,7 +41,6 @@ namespace Students_BMI_and_Scores_Manager
             public static int englishScore;
             public static int mathScore;
             public static bool successfulLoadDatabase = false;
-            public static int randomBigDataPageReturnStatus = -1;
         }
 
         private void change_dataGridView1_font()
@@ -72,7 +71,7 @@ namespace Students_BMI_and_Scores_Manager
             DBConfig.sqlite_connect.Open();//Open database
 
             show_DB();
-            if(publicVariables.successfulLoadDatabase == true)
+            if (publicVariables.successfulLoadDatabase == true)
                 MessageBox.Show("資料庫連結成功!", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information,
                     MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);//設定此彈出視窗為最上層
         }
@@ -138,7 +137,7 @@ namespace Students_BMI_and_Scores_Manager
                     {
                         publicVariables.bmi = publicVariables.weight / (publicVariables.height * publicVariables.height);//計算BMI
 
-                        string sql = @"INSERT INTO record(id,name,height,weight,BMI,chineseScore,englishScore,mathScore) VALUES(" + publicVariables.id.ToString() + ",'" + publicVariables.name + "'," + publicVariables.height.ToString() + "," + publicVariables.weight.ToString() + ","+publicVariables.bmi.ToString()+"," + publicVariables.chineseScore.ToString() + "," + publicVariables.englishScore.ToString() + "," + publicVariables.mathScore.ToString() + ");";
+                        string sql = @"INSERT INTO record(id,name,height,weight,BMI,chineseScore,englishScore,mathScore) VALUES(" + publicVariables.id.ToString() + ",'" + publicVariables.name + "'," + publicVariables.height.ToString() + "," + publicVariables.weight.ToString() + "," + publicVariables.bmi.ToString() + "," + publicVariables.chineseScore.ToString() + "," + publicVariables.englishScore.ToString() + "," + publicVariables.mathScore.ToString() + ");";
                         //宣告一個字串存放要執行的SQL指令
                         DBConfig.sqlite_cmd = new SQLiteCommand(sql, DBConfig.sqlite_connect);
                         DBConfig.sqlite_cmd.ExecuteNonQuery();//執行SQL指令(寫入)
@@ -178,7 +177,7 @@ namespace Students_BMI_and_Scores_Manager
         }
 
         private void double_click(object sender, DataGridViewCellMouseEventArgs e)
-            //雙擊資料表的三角標籤可修改該列資料
+        //雙擊資料表的三角標籤可修改該列資料
         {
             DataGridViewCellCollection selRowData = dataGridView1.SelectedRows[0].Cells;
 
@@ -295,7 +294,25 @@ namespace Students_BMI_and_Scores_Manager
             show_DB();
         }
 
+        /* 未寫進class內的全域變數都放在這裡喔~
+         * 寫在此區的全域變數是為了與其他form之間進行資料的傳遞
+         */
         public int selectedFunction = 0;
+        public int nameStartID = 0;
+        public int dataCount = 0;
+        public double minHeight = 0;
+        public double maxHeight = 0;
+        public double minWeight = 0;
+        public double maxWeight = 0;
+        public int minCHscore = 0;
+        public int maxCHscore = 0;
+        public int minENscore = 0;
+        public int maxENscore = 0;
+        public int randomBigDataPageReturnStatus = -1;
+        /* 未寫進class內的全域變數都放在這裡喔~
+         * 寫在此區的全域變數是為了與其他form之間進行資料的傳遞
+         */
+
         private void exportBtn_Click(object sender, EventArgs e)
         {
             selectedFunction = 0;

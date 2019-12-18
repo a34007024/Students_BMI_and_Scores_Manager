@@ -20,21 +20,23 @@ namespace Students_BMI_and_Scores_Manager
         private void cancelBtn_Click(object sender, EventArgs e)
         {
             Form1 f1 = (Form1)this.Owner;
-            //f1.
+            f1.randomBigDataPageReturnStatus = -1;
             this.Close();
         }
 
         private void confirmBtn_Click(object sender, EventArgs e)
         {
-
+            Form1 f1 = (Form1)this.Owner;
             try
             {
-                //nameIDtextBox.Text
+                f1.nameStartID = int.Parse(nameStartIDtextBox.Text);
             }
             catch
             {
-
+                MessageBox.Show("輸入有誤!請檢查!\n\n成績只能輸入整數喔!", "Error"
+                    , MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            this.Close();
         }
     }
 }

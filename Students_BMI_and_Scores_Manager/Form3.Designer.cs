@@ -31,7 +31,7 @@
             this.confirmBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.nameIDtextBox = new System.Windows.Forms.TextBox();
+            this.nameStartIDtextBox = new System.Windows.Forms.TextBox();
             this.minHeightTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.minWeightTextBox = new System.Windows.Forms.TextBox();
@@ -87,15 +87,15 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "姓名起始編號";
             // 
-            // nameIDtextBox
+            // nameStartIDtextBox
             // 
-            this.nameIDtextBox.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.nameIDtextBox.Location = new System.Drawing.Point(186, 4);
-            this.nameIDtextBox.MaxLength = 10;
-            this.nameIDtextBox.Name = "nameIDtextBox";
-            this.nameIDtextBox.Size = new System.Drawing.Size(100, 36);
-            this.nameIDtextBox.TabIndex = 3;
-            this.nameIDtextBox.Text = "1";
+            this.nameStartIDtextBox.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.nameStartIDtextBox.Location = new System.Drawing.Point(186, 4);
+            this.nameStartIDtextBox.MaxLength = 10;
+            this.nameStartIDtextBox.Name = "nameStartIDtextBox";
+            this.nameStartIDtextBox.Size = new System.Drawing.Size(100, 36);
+            this.nameStartIDtextBox.TabIndex = 3;
+            this.nameStartIDtextBox.Text = "1";
             // 
             // minHeightTextBox
             // 
@@ -306,7 +306,7 @@
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(380, 98);
             this.label12.TabIndex = 24;
-            this.label12.Text = "說明\r\n身高請改為輸入公分\r\n體重請不要輸入小數點\r\n國英數成績請輸入介於0~100的整數\r\n";
+            this.label12.Text = "說明\r\n身高請改為輸入公分\r\n各欄位請都不要輸入小數點\r\n國英數成績請輸入介於0~100的整數\r\n";
             // 
             // dataCount
             // 
@@ -356,12 +356,14 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.minHeightTextBox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.nameIDtextBox);
+            this.Controls.Add(this.nameStartIDtextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.confirmBtn);
             this.Name = "Form3";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "隨機生成數據設定";
+            this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -372,7 +374,7 @@
         private System.Windows.Forms.Button confirmBtn;
         private System.Windows.Forms.Button cancelBtn;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox nameIDtextBox;
+        private System.Windows.Forms.TextBox nameStartIDtextBox;
         private System.Windows.Forms.TextBox minHeightTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox minWeightTextBox;

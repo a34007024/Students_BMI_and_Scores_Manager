@@ -39,6 +39,7 @@ namespace Students_BMI_and_Scores_Manager
             public static int chineseScore;
             public static int englishScore;
             public static int mathScore;
+            public static bool successfulLoadDatabase = false;
         }
 
         private void change_dataGridView1_font()
@@ -69,8 +70,8 @@ namespace Students_BMI_and_Scores_Manager
             DBConfig.sqlite_connect.Open();//Open database
 
             show_DB();
-
-            MessageBox.Show("資料庫連結成功!", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if(publicVariables.successfulLoadDatabase == true)
+                MessageBox.Show("資料庫連結成功!", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void show_DB()//把資料庫的資料顯示在dataGridView上(更新idLabel的功能也在此)
@@ -102,6 +103,7 @@ namespace Students_BMI_and_Scores_Manager
                 }
                 DBConfig.sqlite_dataReader.Close();
                 //資料庫資料讀取完畢
+                publicVariables.successfulLoadDatabase = true;
                 publicVariables.id += 1;//最後一筆讀入的id再加1即為下一筆要輸入進去的資料id
                 idLabel.Text = publicVariables.id.ToString();//改變idLabel的數值
             }

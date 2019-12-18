@@ -28,24 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.confirmBtn = new System.Windows.Forms.Button();
+            this.cancelBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.minHeightTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.minWeightTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.maxHeightTextBox = new System.Windows.Forms.TextBox();
+            this.maxWeightTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.maxCHscoreTextBox = new System.Windows.Forms.TextBox();
+            this.minCHscoreTextBox = new System.Windows.Forms.TextBox();
+            this.maxENscoreTextBox = new System.Windows.Forms.TextBox();
+            this.minENscoreTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.maxMATHscoreTextBox = new System.Windows.Forms.TextBox();
+            this.minMATHscoreTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -57,23 +57,23 @@
             this.label13 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // confirmBtn
             // 
-            this.button1.Location = new System.Drawing.Point(519, 90);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(149, 65);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "確認";
-            this.button1.UseVisualStyleBackColor = true;
+            this.confirmBtn.Location = new System.Drawing.Point(519, 90);
+            this.confirmBtn.Name = "confirmBtn";
+            this.confirmBtn.Size = new System.Drawing.Size(149, 65);
+            this.confirmBtn.TabIndex = 0;
+            this.confirmBtn.Text = "確認";
+            this.confirmBtn.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // cancelBtn
             // 
-            this.button2.Location = new System.Drawing.Point(519, 174);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(149, 65);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "取消";
-            this.button2.UseVisualStyleBackColor = true;
+            this.cancelBtn.Location = new System.Drawing.Point(519, 174);
+            this.cancelBtn.Name = "cancelBtn";
+            this.cancelBtn.Size = new System.Drawing.Size(149, 65);
+            this.cancelBtn.TabIndex = 1;
+            this.cancelBtn.Text = "取消";
+            this.cancelBtn.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -95,15 +95,15 @@
             this.textBox1.TabIndex = 3;
             this.textBox1.Text = "1";
             // 
-            // textBox2
+            // minHeightTextBox
             // 
-            this.textBox2.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.textBox2.Location = new System.Drawing.Point(186, 46);
-            this.textBox2.MaxLength = 3;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 36);
-            this.textBox2.TabIndex = 5;
-            this.textBox2.Text = "150";
+            this.minHeightTextBox.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.minHeightTextBox.Location = new System.Drawing.Point(186, 46);
+            this.minHeightTextBox.MaxLength = 3;
+            this.minHeightTextBox.Name = "minHeightTextBox";
+            this.minHeightTextBox.Size = new System.Drawing.Size(100, 36);
+            this.minHeightTextBox.TabIndex = 5;
+            this.minHeightTextBox.Text = "150";
             // 
             // label2
             // 
@@ -115,15 +115,15 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "身高範圍(cm)";
             // 
-            // textBox3
+            // minWeightTextBox
             // 
-            this.textBox3.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.textBox3.Location = new System.Drawing.Point(186, 90);
-            this.textBox3.MaxLength = 3;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 36);
-            this.textBox3.TabIndex = 7;
-            this.textBox3.Text = "35";
+            this.minWeightTextBox.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.minWeightTextBox.Location = new System.Drawing.Point(186, 90);
+            this.minWeightTextBox.MaxLength = 3;
+            this.minWeightTextBox.Name = "minWeightTextBox";
+            this.minWeightTextBox.Size = new System.Drawing.Size(100, 36);
+            this.minWeightTextBox.TabIndex = 7;
+            this.minWeightTextBox.Text = "35";
             // 
             // label3
             // 
@@ -135,25 +135,25 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "體重範圍(kg)";
             // 
-            // textBox4
+            // maxHeightTextBox
             // 
-            this.textBox4.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.textBox4.Location = new System.Drawing.Point(345, 48);
-            this.textBox4.MaxLength = 3;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 36);
-            this.textBox4.TabIndex = 8;
-            this.textBox4.Text = "190";
+            this.maxHeightTextBox.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.maxHeightTextBox.Location = new System.Drawing.Point(345, 48);
+            this.maxHeightTextBox.MaxLength = 3;
+            this.maxHeightTextBox.Name = "maxHeightTextBox";
+            this.maxHeightTextBox.Size = new System.Drawing.Size(100, 36);
+            this.maxHeightTextBox.TabIndex = 8;
+            this.maxHeightTextBox.Text = "190";
             // 
-            // textBox5
+            // maxWeightTextBox
             // 
-            this.textBox5.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.textBox5.Location = new System.Drawing.Point(345, 90);
-            this.textBox5.MaxLength = 3;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 36);
-            this.textBox5.TabIndex = 9;
-            this.textBox5.Text = "100";
+            this.maxWeightTextBox.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.maxWeightTextBox.Location = new System.Drawing.Point(345, 90);
+            this.maxWeightTextBox.MaxLength = 3;
+            this.maxWeightTextBox.Name = "maxWeightTextBox";
+            this.maxWeightTextBox.Size = new System.Drawing.Size(100, 36);
+            this.maxWeightTextBox.TabIndex = 9;
+            this.maxWeightTextBox.Text = "100";
             // 
             // label4
             // 
@@ -165,45 +165,45 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "國文成績範圍";
             // 
-            // textBox6
+            // maxCHscoreTextBox
             // 
-            this.textBox6.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.textBox6.Location = new System.Drawing.Point(345, 132);
-            this.textBox6.MaxLength = 3;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 36);
-            this.textBox6.TabIndex = 12;
-            this.textBox6.Text = "100";
+            this.maxCHscoreTextBox.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.maxCHscoreTextBox.Location = new System.Drawing.Point(345, 132);
+            this.maxCHscoreTextBox.MaxLength = 3;
+            this.maxCHscoreTextBox.Name = "maxCHscoreTextBox";
+            this.maxCHscoreTextBox.Size = new System.Drawing.Size(100, 36);
+            this.maxCHscoreTextBox.TabIndex = 12;
+            this.maxCHscoreTextBox.Text = "100";
             // 
-            // textBox7
+            // minCHscoreTextBox
             // 
-            this.textBox7.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.textBox7.Location = new System.Drawing.Point(186, 132);
-            this.textBox7.MaxLength = 3;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 36);
-            this.textBox7.TabIndex = 11;
-            this.textBox7.Text = "0";
+            this.minCHscoreTextBox.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.minCHscoreTextBox.Location = new System.Drawing.Point(186, 132);
+            this.minCHscoreTextBox.MaxLength = 3;
+            this.minCHscoreTextBox.Name = "minCHscoreTextBox";
+            this.minCHscoreTextBox.Size = new System.Drawing.Size(100, 36);
+            this.minCHscoreTextBox.TabIndex = 11;
+            this.minCHscoreTextBox.Text = "0";
             // 
-            // textBox8
+            // maxENscoreTextBox
             // 
-            this.textBox8.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.textBox8.Location = new System.Drawing.Point(345, 174);
-            this.textBox8.MaxLength = 3;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 36);
-            this.textBox8.TabIndex = 15;
-            this.textBox8.Text = "100";
+            this.maxENscoreTextBox.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.maxENscoreTextBox.Location = new System.Drawing.Point(345, 174);
+            this.maxENscoreTextBox.MaxLength = 3;
+            this.maxENscoreTextBox.Name = "maxENscoreTextBox";
+            this.maxENscoreTextBox.Size = new System.Drawing.Size(100, 36);
+            this.maxENscoreTextBox.TabIndex = 15;
+            this.maxENscoreTextBox.Text = "100";
             // 
-            // textBox9
+            // minENscoreTextBox
             // 
-            this.textBox9.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.textBox9.Location = new System.Drawing.Point(186, 174);
-            this.textBox9.MaxLength = 3;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 36);
-            this.textBox9.TabIndex = 14;
-            this.textBox9.Text = "0";
+            this.minENscoreTextBox.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.minENscoreTextBox.Location = new System.Drawing.Point(186, 174);
+            this.minENscoreTextBox.MaxLength = 3;
+            this.minENscoreTextBox.Name = "minENscoreTextBox";
+            this.minENscoreTextBox.Size = new System.Drawing.Size(100, 36);
+            this.minENscoreTextBox.TabIndex = 14;
+            this.minENscoreTextBox.Text = "0";
             // 
             // label5
             // 
@@ -215,25 +215,25 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "英文成績範圍";
             // 
-            // textBox10
+            // maxMATHscoreTextBox
             // 
-            this.textBox10.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.textBox10.Location = new System.Drawing.Point(345, 216);
-            this.textBox10.MaxLength = 3;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 36);
-            this.textBox10.TabIndex = 18;
-            this.textBox10.Text = "100";
+            this.maxMATHscoreTextBox.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.maxMATHscoreTextBox.Location = new System.Drawing.Point(345, 216);
+            this.maxMATHscoreTextBox.MaxLength = 3;
+            this.maxMATHscoreTextBox.Name = "maxMATHscoreTextBox";
+            this.maxMATHscoreTextBox.Size = new System.Drawing.Size(100, 36);
+            this.maxMATHscoreTextBox.TabIndex = 18;
+            this.maxMATHscoreTextBox.Text = "100";
             // 
-            // textBox11
+            // minMATHscoreTextBox
             // 
-            this.textBox11.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.textBox11.Location = new System.Drawing.Point(186, 216);
-            this.textBox11.MaxLength = 3;
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(100, 36);
-            this.textBox11.TabIndex = 17;
-            this.textBox11.Text = "0";
+            this.minMATHscoreTextBox.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.minMATHscoreTextBox.Location = new System.Drawing.Point(186, 216);
+            this.minMATHscoreTextBox.MaxLength = 3;
+            this.minMATHscoreTextBox.Name = "minMATHscoreTextBox";
+            this.minMATHscoreTextBox.Size = new System.Drawing.Size(100, 36);
+            this.minMATHscoreTextBox.TabIndex = 17;
+            this.minMATHscoreTextBox.Text = "0";
             // 
             // label6
             // 
@@ -338,27 +338,27 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox11);
+            this.Controls.Add(this.maxMATHscoreTextBox);
+            this.Controls.Add(this.minMATHscoreTextBox);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.maxENscoreTextBox);
+            this.Controls.Add(this.minENscoreTextBox);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.maxCHscoreTextBox);
+            this.Controls.Add(this.minCHscoreTextBox);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.maxWeightTextBox);
+            this.Controls.Add(this.maxHeightTextBox);
+            this.Controls.Add(this.minWeightTextBox);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.minHeightTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cancelBtn);
+            this.Controls.Add(this.confirmBtn);
             this.Name = "Form3";
-            this.Text = "Form3";
+            this.Text = "隨機生成數據設定";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -366,24 +366,24 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button confirmBtn;
+        private System.Windows.Forms.Button cancelBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox minHeightTextBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox minWeightTextBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox maxHeightTextBox;
+        private System.Windows.Forms.TextBox maxWeightTextBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox maxCHscoreTextBox;
+        private System.Windows.Forms.TextBox minCHscoreTextBox;
+        private System.Windows.Forms.TextBox maxENscoreTextBox;
+        private System.Windows.Forms.TextBox minENscoreTextBox;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox maxMATHscoreTextBox;
+        private System.Windows.Forms.TextBox minMATHscoreTextBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;

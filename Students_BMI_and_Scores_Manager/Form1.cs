@@ -22,6 +22,7 @@ namespace Students_BMI_and_Scores_Manager
 
             load_DB();//程式初始化, 載入dataBase
             updateChart();//初始化載入資料後更新圖表
+            this.TopMost = true;
         }
 
         public class publicVariables
@@ -40,6 +41,7 @@ namespace Students_BMI_and_Scores_Manager
             public static int englishScore;
             public static int mathScore;
             public static bool successfulLoadDatabase = false;
+            public static int randomBigDataPageReturnStatus = -1;
         }
 
         private void change_dataGridView1_font()

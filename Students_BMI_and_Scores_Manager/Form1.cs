@@ -19,6 +19,7 @@ namespace Students_BMI_and_Scores_Manager
         {
             InitializeComponent();
             change_dataGridView1_font();
+
             load_DB();//程式初始化, 載入dataBase
             updateChart();//初始化載入資料後更新圖表
         }
@@ -68,6 +69,8 @@ namespace Students_BMI_and_Scores_Manager
             DBConfig.sqlite_connect.Open();//Open database
 
             show_DB();
+
+            MessageBox.Show("資料庫連結成功!", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void show_DB()//把資料庫的資料顯示在dataGridView上(更新idLabel的功能也在此)
@@ -164,7 +167,7 @@ namespace Students_BMI_and_Scores_Manager
             }
             catch
             {
-                MessageBox.Show("輸入有誤!請檢查!", "Error"
+                MessageBox.Show("輸入有誤!請檢查!\n\n成績只能輸入整數喔!", "Error"
                     , MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -270,7 +273,7 @@ namespace Students_BMI_and_Scores_Manager
             }
             catch
             {
-                MessageBox.Show("輸入有誤!請檢查!", "Error"
+                MessageBox.Show("輸入有誤!請檢查!\n\n成績只能輸入整數喔!", "Error"
                     , MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

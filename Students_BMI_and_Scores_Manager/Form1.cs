@@ -345,6 +345,47 @@ namespace Students_BMI_and_Scores_Manager
             }
             else if(selectedFunction == 2)//匯出圖表(excel)
             {
+                SaveFileDialog save = new SaveFileDialog();
+                save.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                save.FileName = "Export_Chart_Data";
+                save.Filter = "*.xlsx|*.xlsx";
+                if (save.ShowDialog() != DialogResult.OK) return;
+
+                // Excel 物件
+                Excel.Application xls = null;
+                try
+                {
+                    xls = new Excel.Application();
+                    // Excel WorkBook
+                    Excel.Workbook book = xls.Workbooks.Add();
+                    //Excel.Worksheet Sheet = (Excel.Worksheet)book.Worksheets[1];
+                    Excel.Worksheet Sheet = xls.ActiveSheet;
+
+                    // 把資料塞進 Excel 內
+
+                    // 標題
+                    Sheet.Cells[1, 1] = "體重範圍";
+                    Sheet.Cells[1, 2] = "人數";
+
+                    // 內容
+                    for (int k = 0; k < this.chart1.Series["weight"].Points.Count; k++)
+                    {
+                        Sheet.Cells[k + 2, 1] = this.chart1.Series["weight"].Points[k].AxisLabel.ToString();
+                        Sheet.Cells[k + 2, 2] = this.chart1.Series["weight"].Points[k].YValues[0].ToString();
+                    }
+
+
+                    // 儲存檔案
+                    book.SaveAs(save.FileName);
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    xls.Quit();
+                }
 
             }
             else if(selectedFunction == 3)//匯出資料(csv)

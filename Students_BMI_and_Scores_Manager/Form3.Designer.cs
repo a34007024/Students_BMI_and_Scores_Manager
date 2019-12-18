@@ -31,7 +31,7 @@
             this.confirmBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.nameIDtextBox = new System.Windows.Forms.TextBox();
             this.minHeightTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.minWeightTextBox = new System.Windows.Forms.TextBox();
@@ -53,7 +53,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.dataCount = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -65,6 +65,7 @@
             this.confirmBtn.TabIndex = 0;
             this.confirmBtn.Text = "確認";
             this.confirmBtn.UseVisualStyleBackColor = true;
+            this.confirmBtn.Click += new System.EventHandler(this.confirmBtn_Click);
             // 
             // cancelBtn
             // 
@@ -74,6 +75,7 @@
             this.cancelBtn.TabIndex = 1;
             this.cancelBtn.Text = "取消";
             this.cancelBtn.UseVisualStyleBackColor = true;
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
             // label1
             // 
@@ -85,15 +87,15 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "姓名起始編號";
             // 
-            // textBox1
+            // nameIDtextBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.textBox1.Location = new System.Drawing.Point(186, 4);
-            this.textBox1.MaxLength = 10;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 36);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.Text = "1";
+            this.nameIDtextBox.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.nameIDtextBox.Location = new System.Drawing.Point(186, 4);
+            this.nameIDtextBox.MaxLength = 10;
+            this.nameIDtextBox.Name = "nameIDtextBox";
+            this.nameIDtextBox.Size = new System.Drawing.Size(100, 36);
+            this.nameIDtextBox.TabIndex = 3;
+            this.nameIDtextBox.Text = "1";
             // 
             // minHeightTextBox
             // 
@@ -306,14 +308,15 @@
             this.label12.TabIndex = 24;
             this.label12.Text = "說明\r\n身高請改為輸入公分\r\n體重請不要輸入小數點\r\n國英數成績請輸入介於0~100的整數\r\n";
             // 
-            // textBox12
+            // dataCount
             // 
-            this.textBox12.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.textBox12.Location = new System.Drawing.Point(537, 4);
-            this.textBox12.MaxLength = 10;
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(100, 36);
-            this.textBox12.TabIndex = 26;
+            this.dataCount.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.dataCount.Location = new System.Drawing.Point(537, 4);
+            this.dataCount.MaxLength = 10;
+            this.dataCount.Name = "dataCount";
+            this.dataCount.Size = new System.Drawing.Size(100, 36);
+            this.dataCount.TabIndex = 26;
+            this.dataCount.Text = "10";
             // 
             // label13
             // 
@@ -330,7 +333,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(698, 424);
-            this.Controls.Add(this.textBox12);
+            this.Controls.Add(this.dataCount);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
@@ -353,7 +356,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.minHeightTextBox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.nameIDtextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.confirmBtn);
@@ -369,7 +372,7 @@
         private System.Windows.Forms.Button confirmBtn;
         private System.Windows.Forms.Button cancelBtn;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox nameIDtextBox;
         private System.Windows.Forms.TextBox minHeightTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox minWeightTextBox;
@@ -391,7 +394,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox dataCount;
         private System.Windows.Forms.Label label13;
     }
 }

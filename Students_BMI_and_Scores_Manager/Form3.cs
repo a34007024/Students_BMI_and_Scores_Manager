@@ -16,5 +16,25 @@ namespace Students_BMI_and_Scores_Manager
         {
             InitializeComponent();
         }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            Form1 f1 = (Form1)this.Owner;
+            //f1.
+            this.Close();
+        }
+
+        private void confirmBtn_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                //nameIDtextBox.Text
+            }
+            catch
+            {
+
+            }
+        }
     }
 }

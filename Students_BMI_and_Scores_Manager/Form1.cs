@@ -394,7 +394,13 @@ namespace Students_BMI_and_Scores_Manager
             }
             else if(selectedFunction == 4)//匯出圖表(jpg)
             {
+                SaveFileDialog save = new SaveFileDialog();
+                save.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                save.FileName = "Export_Chart_JPG";
+                save.Filter = "*.jpg|*.jpg";
+                if (save.ShowDialog() != DialogResult.OK) return;
 
+                chart1.SaveImage(save.FileName, System.Drawing.Imaging.ImageFormat.Jpeg);
             }
             else
             {

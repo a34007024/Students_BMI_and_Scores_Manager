@@ -358,6 +358,9 @@
             // 
             // chart1
             // 
+            this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             chartArea1.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
@@ -418,6 +421,7 @@
             this.randomBigDataBtn.TabIndex = 23;
             this.randomBigDataBtn.Text = "隨機生成";
             this.randomBigDataBtn.UseVisualStyleBackColor = true;
+            this.randomBigDataBtn.Click += new System.EventHandler(this.randomBigDataBtn_Click);
             // 
             // pictureBox1
             // 
@@ -460,6 +464,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "北護學生BMI與成績管理分析系統";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabControl1.ResumeLayout(false);

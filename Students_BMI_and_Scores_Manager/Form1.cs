@@ -447,5 +447,11 @@ namespace Students_BMI_and_Scores_Manager
                 "\n平均英文成績為:" + enScoreAvg.ToString() +
                 "\n平均數學成績為:" + mathScoreAvg.ToString());
         }
+
+        private void randomBigDataBtn_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("敬請期待!", "施工中...最後更新日期:2019/12/18", 
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

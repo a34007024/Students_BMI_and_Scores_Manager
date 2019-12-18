@@ -53,7 +53,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.dataCount = new System.Windows.Forms.TextBox();
+            this.dataCountTextBox = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -308,15 +308,15 @@
             this.label12.TabIndex = 24;
             this.label12.Text = "說明\r\n身高請改為輸入公分\r\n各欄位請都不要輸入小數點\r\n國英數成績請輸入介於0~100的整數\r\n";
             // 
-            // dataCount
+            // dataCountTextBox
             // 
-            this.dataCount.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.dataCount.Location = new System.Drawing.Point(537, 4);
-            this.dataCount.MaxLength = 10;
-            this.dataCount.Name = "dataCount";
-            this.dataCount.Size = new System.Drawing.Size(100, 36);
-            this.dataCount.TabIndex = 26;
-            this.dataCount.Text = "10";
+            this.dataCountTextBox.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.dataCountTextBox.Location = new System.Drawing.Point(537, 4);
+            this.dataCountTextBox.MaxLength = 10;
+            this.dataCountTextBox.Name = "dataCountTextBox";
+            this.dataCountTextBox.Size = new System.Drawing.Size(100, 36);
+            this.dataCountTextBox.TabIndex = 26;
+            this.dataCountTextBox.Text = "10";
             // 
             // label13
             // 
@@ -333,7 +333,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(698, 424);
-            this.Controls.Add(this.dataCount);
+            this.Controls.Add(this.dataCountTextBox);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
@@ -396,7 +396,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox dataCount;
+        private System.Windows.Forms.TextBox dataCountTextBox;
         private System.Windows.Forms.Label label13;
     }
 }

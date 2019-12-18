@@ -308,7 +308,9 @@ namespace Students_BMI_and_Scores_Manager
         public int maxCHscore = 0;
         public int minENscore = 0;
         public int maxENscore = 0;
-        public int randomBigDataPageReturnStatus = -1;
+        public int minMATHscore = 0;
+        public int maxMATHscore = 0;
+        public int randomBigDataPageReturnStatus = 0;
         /* 未寫進class內的全域變數都放在這裡喔~
          * 寫在此區的全域變數是為了與其他form之間進行資料的傳遞
          */
@@ -479,6 +481,14 @@ namespace Students_BMI_and_Scores_Manager
             Form3 f3 = new Form3();
             f3.Owner = this;//重要的一步，使Form2的Owner指針指向Form1
             f3.ShowDialog();
+            if(randomBigDataPageReturnStatus == 1)
+            {
+
+            }
+            else
+            {
+                //do nothing
+            }
         }
 
         private void Form1_MouseClick(object sender, MouseEventArgs e)

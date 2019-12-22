@@ -129,6 +129,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bars-chart.ico" />
+    <None Include="Resources\1568994362_data2.gif" />
     <None Include="Resources\floatingData-part1.gif" />
     <None Include="Resources\北護LOGO.gif" />
   </ItemGroup>

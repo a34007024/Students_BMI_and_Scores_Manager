@@ -63,6 +63,16 @@ namespace Students_BMI_and_Scores_Manager.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap _1568994362_data2 {
+            get {
+                object obj = ResourceManager.GetObject("1568994362_data2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap floatingData_part1 {
             get {
                 object obj = ResourceManager.GetObject("floatingData-part1", resourceCulture);

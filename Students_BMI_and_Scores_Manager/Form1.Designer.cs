@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -67,12 +68,16 @@
             this.exportBtn = new System.Windows.Forms.Button();
             this.randomBigDataBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.waitingPictureBox = new System.Windows.Forms.PictureBox();
+            this.waitingLabel = new System.Windows.Forms.Label();
+            this.waitingTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.waitingPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -434,12 +439,47 @@
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             // 
+            // waitingPictureBox
+            // 
+            this.waitingPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.waitingPictureBox.Image = global::Students_BMI_and_Scores_Manager.Properties.Resources._1568994362_data2;
+            this.waitingPictureBox.Location = new System.Drawing.Point(902, 579);
+            this.waitingPictureBox.Name = "waitingPictureBox";
+            this.waitingPictureBox.Size = new System.Drawing.Size(1266, 674);
+            this.waitingPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.waitingPictureBox.TabIndex = 4;
+            this.waitingPictureBox.TabStop = false;
+            this.waitingPictureBox.Visible = false;
+            // 
+            // waitingLabel
+            // 
+            this.waitingLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.waitingLabel.AutoSize = true;
+            this.waitingLabel.BackColor = System.Drawing.Color.White;
+            this.waitingLabel.Font = new System.Drawing.Font("新細明體", 16F);
+            this.waitingLabel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.waitingLabel.Location = new System.Drawing.Point(876, 606);
+            this.waitingLabel.Name = "waitingLabel";
+            this.waitingLabel.Size = new System.Drawing.Size(295, 32);
+            this.waitingLabel.TabIndex = 4;
+            this.waitingLabel.Text = "生成資料中...請等待";
+            this.waitingLabel.Visible = false;
+            // 
+            // waitingTimer
+            // 
+            this.waitingTimer.Interval = 1000;
+            this.waitingTimer.Tick += new System.EventHandler(this.waitingTimer_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1258, 664);
+            this.Controls.Add(this.waitingLabel);
+            this.Controls.Add(this.waitingPictureBox);
             this.Controls.Add(this.randomBigDataBtn);
             this.Controls.Add(this.exportBtn);
             this.Controls.Add(this.calculateAverageBtn);
@@ -473,6 +513,7 @@
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.waitingPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -515,6 +556,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.PictureBox waitingPictureBox;
+        private System.Windows.Forms.Label waitingLabel;
+        private System.Windows.Forms.Timer waitingTimer;
     }
 }
 

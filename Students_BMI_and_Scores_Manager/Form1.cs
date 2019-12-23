@@ -41,6 +41,7 @@ namespace Students_BMI_and_Scores_Manager
             public static int englishScore;
             public static int mathScore;
             public static bool successfulLoadDatabase = false;
+            public static int countDownTime = 0;
         }
 
         private void change_dataGridView1_font()
@@ -482,6 +483,13 @@ namespace Students_BMI_and_Scores_Manager
             f3.ShowDialog();
             if(randomBigDataPageReturnStatus == 1)
             {
+                this.waitingPictureBox.Location = new System.Drawing.Point(-6, -6);
+                waitingPictureBox.Visible = true;
+                waitingLabel.Visible = true;
+                waitingLabel.BringToFront();
+                publicVariables.countDownTime = dataCount / 20 + 3;
+                waitingLabel.Text = "生成資料中...請等待" + publicVariables.countDownTime.ToString() + "秒";
+                waitingTimer.Enabled = true;
                 Random rnd = new Random();
                 for (int i = 0; i < dataCount; i++)
                 {
@@ -517,6 +525,18 @@ namespace Students_BMI_and_Scores_Manager
         private void Form1_MouseClick(object sender, MouseEventArgs e)
         {
             this.TopMost = false;//滑鼠點擊視窗後取消掉固定在最上層
+        }
+
+        private void waitingTimer_Tick(object sender, EventArgs e)
+        {
+            publicVariables.countDownTime -= 1;
+            waitingLabel.Text = "生成資料中...請等待" + publicVariables.countDownTime.ToString() + "秒";
+            if (publicVariables.countDownTime <= -1)
+            {
+                waitingPictureBox.Visible = false;
+                waitingLabel.Visible = false;
+                waitingTimer.Enabled = false;
+            }
         }
     }
 }
